@@ -14,6 +14,10 @@ app.use("/posts", postRouter);
 const commentsRouter = require("./routes/Comments");
 app.use("/comments", commentsRouter);
 
+//Users
+const usersRouter = require("./routes/Users");
+app.use("/auth", usersRouter);
+
 dbThing.sequelize.sync().then(() => {
   app.listen(3005, () => {
     console.log("Server running on port 3005");
